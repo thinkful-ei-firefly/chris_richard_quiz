@@ -5,9 +5,9 @@ function main() {
   console.log('loaded main funciton');
   console.log($('button').attr($('class'));
 
-  let questionNum = 0; //0=begin, E=end
-  let score = 0; //initial score = 0;
-
+  let questionNum = 0;
+  let score = 0;
+  
   //data for questions
   let dataSet = {
     q1: {
