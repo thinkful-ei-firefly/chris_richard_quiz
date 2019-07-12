@@ -1,21 +1,61 @@
+
 body {
-    background: azure;
-  }
-  
-  header {
-		display: block;
-    text-align: right;
-    border: 1px solid black;
-    padding: 20px;
+  background: orange;
+}
 
-  }
+header {
+  text-align: center;
+  padding: 20px;
+}
 
- .banner {
-      width: 400px;
-      background-color: white;
-      padding: 40px;
-      margin: 20px, 25px;
-      border: double 1px black;
-      text-align: center
-  }
-  
+fieldset {
+  box-shadow: 20px 18px black;
+  border-radius: 35px;
+  width: 400px;
+  background-color: cyan;
+  padding: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+legend {
+  display: block;
+  padding-left: 33%;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+label {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: block;
+  height: 40px;
+  width: 320px;
+  margin: 15, auto, 15, auto;
+}
+
+input {
+  display: block;
+  width: 290px;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.answer {
+  text-align: center;
+}
+
+/*button disabled until customized*/
+button:disabled {
+  user-select: none;
+}
+
+/*
+footer {
+  text-align: center;
+  color: orange;
+  font-size: 18px;
+  padding: 15px;
+}
+*/
