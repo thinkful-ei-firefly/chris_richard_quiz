@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,44 +9,34 @@
         <link href="./style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="">
-            <video loop muted autoplay class="">
-                <source id="" src=""
-            </video>
-        </div>
-        <header>
-            <div>
-                    <div></div>
-                <div>
-                    <a href=""></a>
-
-                    <a href=""><h2></h2></a>
-                </div>
-            </div>
-        </header role ="banner">
+        <header class="wrapper">
             <h1>Question</h1>
-                <p><h2>1 of 10</h2></p>
+                <h2>1 of 10</h2>
+        </header>
         <main>
                 <form class='quiz' action='Submits' method='post'>
                     <fieldset name='avengersQuiz'>
                     <p>  
-                    <legend>Avenger's Quiz</legend>
+                    <legend class="title">Avenger's Quiz</legend>
                     </p>  
-                      <label for='question'>What Avenger turns green</label>
+                      <label class="label">What Avenger turns green?</label>
                       <p class="answer">
-                      <input type='radio'/> <br>
-                      <input type='radio'/> <br>
-                      <input type='radio'/> <br>
-                      <input type='radio'/> <br>
-                      <input type='radio'/> <br> 
+                      <input type='radio' id="radio" required/> Hulk<br>
+                      <input type='radio' id="radio"/> George Washington<br>
+                      <input type='radio' id="radio"/> A Roadkill Hamster<br>
+                      <input type='radio' id="radio"/> Toyota Prius<br>
+                      <input type='radio' id="radio"/> Your mom<br> 
                       </p>
                       <p>
-                      <button type='begin' id='begin'>Submit</button>
-                      </p>
+
+                      <button type='submit' class="checkout-button" name="checkout-button" disabled="disabled">Submit id='begin'</button>
+                      
+                    </p>
                     </fieldset>
                     </form>
         </main>
-        <script src = "index.js" async defer></script>
+
+        <script src="./index.js" async defer></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
