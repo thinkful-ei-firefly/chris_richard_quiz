@@ -11,22 +11,22 @@ function main() {
             text:'question1: a is correct',
             options: ['a', 'b', 'c', 'd'],
             answer: 'a',
-        }
+        },
         q2: {
             text:'question1: b is correct',
             options: ['a', 'b', 'c', 'd'],
             answer: 'b',
-        }
+        },
         q3: {
             text:'question1: c is correct',
             options: ['a', 'b', 'c', 'd'],
             answer: 'c',
-        }
+        },
         q4: {
             text:'question1: d is correct',
             options: ['a', 'b', 'c', 'd'],
             answer: 'd',
-        }
+        },
         q5: {
             text:'question1: a is correct',
             options: ['a', 'b', 'c', 'd'],
@@ -36,18 +36,41 @@ function main() {
 
 //initialize <main>
 
-$(main).html(`
+/*$(main).html(`
     <form class="quiz" methode="post">
     <fieldset name='quiz'>
     <ledgend>Get Started</ledgend>
     <button class='go' type='go'>Quiz Time</button>
     `)
+*/
 
-$(main).on('click', '.go' event => {
+$(main).on('click', '.go', event => {
 
 });
 
 //function updates mainhtml
+//want the main html to look like
+const question = 'some Question';
+const optionA = 'Answer A';
+const optionB = 'Answer B';
+const optionC = 'Answer C';
+const optionD = 'Answer D';
+const optionE = 'Answer E';
+`<form class='quiz' method='post'>
+<fieldset>${question}</fieldset>  
+  <label for='question'>${optionA}</label>
+  <input type='radio' id='a' value='Answer A'/>
+  <label for='Answer A'>${optionB}</label>
+  <input type='radio' id='b' value='Answer B'/>
+  <label for='Answer B'>${optionC}</label>
+  <input type='radio' id='c' value='Answer C'/>
+  <label for='Answer C'>${}</label>
+  <input type='radio' id='d' value='Answer D'/>
+  <label for='Answer D'>${}</label>
+  <input type='radio' id='e' value='Answer E'/>
+  <label for='Answer A'>${}</label>
+  <button type='submit' class='go'>Check Answer</button
+</form>`
 
 //function update question number text
 
@@ -62,8 +85,6 @@ $(main).on('click', '.go' event => {
 //function check to see if answer is correct
 
 //function start quiz
-
-
 
 }
 
