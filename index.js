@@ -1,127 +1,133 @@
 'use strict';
+function submitHandle(){
 
-function main() {
-
-  console.log('loaded main funciton');
-  console.log($('button').attr($('class'));
-
-  let questionNum = 0;
-  let score = 0;
-  
-  //data for questions
   let dataSet = {
     q1: {
       text:'question1: a is correct',
-      options: ['a', 'b', 'c', 'd'],
-      answer: 'a',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerA',
     },
     q2: {
-      text:'question1: b is correct',
-      options: ['a', 'b', 'c', 'd'],
-      answer: 'b',
+      text:'question2: b is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerB',
     },
     q3: {
-      text:'question1: c is correct',
-      options: ['a', 'b', 'c', 'd'],
-      answer: 'c',
+      text:'question3: c is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerC',
     },
     q4: {
-      text:'question1: d is correct',
-      options: ['a', 'b', 'c', 'd'],
-      answer: 'd',
+      text:'question4: d is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerD',
     },
     q5: {
-      text:'question1: a is correct',
-      options: ['a', 'b', 'c', 'd'],
-      answer: 'a',
+      text:'question5: e is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerE',
+    },
+    q6: {
+      text:'question6: a is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerA',
+      correct: 'Some responce Correct page',
+      wrong: 'some wrong text'
+    },
+    q7: {
+      text:'question7: b is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerB',
+    },
+    q8: {
+      text:'question8: c is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerC',
+    },
+    q9: {
+      text:'question9: d is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerD',
+    },
+    q10: {
+      text:'question10: e is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerE',
     }
   };
 
-  //initialize <main> with start
-  $(main).html(`
-        <form class="quiz" methode="post">
-        <fieldset name='quiz'>
-        <ledgend>Get Started</ledgend>
-        <button class='begin' type='go'>Quiz Time</button>
-        `
-  );
+  let questionNum = 0;
+  let score = 0;
 
-  //listener for the start quiz button id = 'begin'
-  $(main).on('click', '#begin', event => {
-    event.preventDefault();
-    //updating main HTML with the question 1 details.
-    updateHtml(getQuestionHtml(dataSet.q1.text, dataSet.q1.options, dataSet.q1.answer));
-  });
-
-  //listener for the check anwser button id = 'check'
-  //checks to see if the ansewer is correct
-  //goes to wrong or correct
-  //increments questionNum by one
-  //updates score
-  $(main).on('click', '#check', event => {
-    event.preventDefault();
-    //get the answer chosen
-    const choice = $(event.target).val();
-    const result = isRight(choice);
-    if (result) {
-      let a = getCorrectHtml();
-      updateHtml(a);
-      updateScore();
-    } else {
-      let a = getWrongHtml();
-      updateHtml(a);
+  //button press listener
+  $('main').submit(e => {
+    e.preventDefault();
+    let imgId = $(e.target).attr('id');
+    if (imgId === 'begin') {
+      updateMain(getQuestionHtml(dataSet[Object.keys(dataSet)[questionNum]].text, dataSet[Object.keys(dataSet)[questionNum]].options));
+      questionNumTextUpdate();
+      $('#score').html(`Score: ${score}`);
     }
-    return questionNum++;
-  });
-
-  //listener for the next question button id = 'next'
-  //the next button will be on a correct or wrong answer page
-  //update question number html
-  $(main).on('click', '#next', event => {
-    event.preventDefault();
-    if (questionNum < dataSet.length) {
-      if (questionNum === 1) { 
-        updateHtml(getQuestionHtml(dataSet.q1.text, dataSet.q1.options, dataSet.q1.answer));            
-      }else if (questionNum === 2) { 
-        updateHtml(getQuestionHtml(dataSet.q2.text, dataSet.q2.options, dataSet.q2.answer));            
-      } else if (questionNum === 3) { 
-        updateHtml(getQuestionHtml(dataSet.q3.text, dataSet.q3.options, dataSet.q3.answer));            
-      } else if (questionNum === 4) { 
-        updateHtml(getQuestionHtml(dataSet.q4.text, dataSet.q4.options, dataSet.q4.answer));            
-      } else if (questionNum === 5) { 
-        updateHtml(getQuestionHtml(dataSet.q5.text, dataSet.q5.options, dataSet.q5.answer));            
-      } else {
-        // update to End html
-        updateHtml(getEndHtml());
+    else if (imgId === 'check') {
+      
+      // get the users input choice
+      const choice = $('input[name=\'quiz\']:checked').val();
+      
+      // get the answer from the dataSet
+      const answer = dataSet[Object.keys(dataSet)[questionNum]].answer;
+      
+      //compair if true go to correct, if false go to wrong
+      questionNumUpdate();
+      if (choice === answer) {
+        scoreUpdate();
+        $('#score').html(`Score: ${score}`);
+        updateMain(getCorrectHtml());
+      } 
+      else {
+        updateMain(getWrongHtml());
       }
     }
-    return questionNum++;
-  });
-
-  //listener for the restart quiz button id = 'restart'
-  $(main).on('click', '#restart', event => {
-    event.preventDefault();
-    updateHtml(getStartHtml());
-    questionNum = 0;
-    score = 0;
-    return questionNum, score;
-    //update html
+    else if (imgId === 'next') {
+      if (questionNum < Object.keys(dataSet).length) {
+        //update to the next question
+        updateMain(getQuestionHtml(dataSet[Object.keys(dataSet)[questionNum]].text, dataSet[Object.keys(dataSet)[questionNum]].options));
+        questionNumTextUpdate();
+      }
+      else {
+        updateMain(getEndHtml());
+        $('#question').html('');
+      }
+    }
+    else if (imgId === 'restart') {
+      updateMain(getStartHtml());
+      questionNumUpdate(true);
+      scoreUpdate(true);
+      $('#score').html(``);
+      return questionNum = 0;
+    }
   });
 
   function getQuestionHtml(question, options) {
     const questionHtml = `
-        <form class='quiz' method='post'>
-        <fieldset>${question}</fieldset>
-        <input type='radio' id='a' value='AnswerA'/>
-        <label for='AnswerA'>${options[0]}</label>
-        <input type='radio' id='b' value='AnswerB'/>
-        <label for='AnswerB'>${options[1]}</label>
-        <input type='radio' id='c' value='AnswerC'/>
-        <label for='AnswerC'>${options[2]}</label>
-        <input type='radio' id='d' value='AnswerD'/>
-        <label for='AnswerD'>${options[3]}</label>
-        <input type='radio' id='e' value='AnswerE'/>
-        <label for='AnswerE'>${options[4]}</label>
+        <form id='check' method='post' action="/some-server-endpoint">
+        <h2>${question}</h2>
+        <p>
+        <input type='radio' id='choiceA' 
+          name='quiz' value='answerA'/>
+        <label for='AnswerA'>${options[0]}</label></br>
+        <input type='radio' id='choiceB'
+          name='quiz' value='answerB'/>
+        <label for='AnswerB'>${options[1]}</label></br>
+        <input type='radio' id='choiceC'
+          name='quiz' value='answerC'/>
+        <label for='AnswerC'>${options[2]}</label></br>
+        <input type='radio' id='choiceD'
+          name='quiz' value='answerD'/>
+        <label for='AnswerD'>${options[3]}</label></br>
+        <input type='radio' id='choiceE'
+          name='quiz' value='answerE'/>
+        <label for='AnswerE'>${options[4]}</label></br>
+        </p>
         <button type='check' id='check'>Check Answer</button
         </form>`;
     return questionHtml;
@@ -129,61 +135,76 @@ function main() {
 
   function getStartHtml() {
     const a =`
-      <form class="quiz" methode="post">
-      <fieldset name='quiz'>
-      <ledgend>Get Started</ledgend>
-      <button id='begin' type='go'>Quiz Time</button>
-      `;
+      <form id="begin" action="/some-server-endpoint">
+      <p>Are You Ready to Get Started?</p>
+      <button type="submit">Start Quiz</button>
+      </form>`;
     return a;
   }
 
   function getEndHtml() {
     const a =`
-      <form class="quiz" methode="post">
-      <fieldset name='quiz'>
-      <ledgend>Get Started</ledgend>
-      <button id='restart' type='go'>Quiz Time</button>
-      `;
+    <form id="restart" action="/some-server-endpoint">
+    <p>This is the End of the quiz.</p>
+    <p>Your score is ${score} out of ${Object.keys(dataSet).length}</p>
+    <p>Would you like to play again</p>
+    <button type="submit">Play Again</button>
+    </form>`;
     return a;
   }
 
   function getWrongHtml() {
-    const a =`
-        <form class="quiz" methode="post">
-        <fieldset name='quiz'>
-        <ledgend>Quiz</ledgend>
-        <p>Incorrect :(</p>
-        <button class='next' type='go'>Next Question</button>
-        `;
+    const a =`<form id='next' method='post' action="/some-server-endpoint">
+    <h2>That's Incorrect :(</h2>
+    <button type='check' id='check'>Next Question</button
+    </form>`;
     return a;
   }
 
   function getCorrectHtml() {
-    const a =`
-      <form class="quiz" methode="post">
-      <fieldset name='quiz'>
-      <ledgend>Quiz</ledgend>
-      <p>Correct!</p>
-      <button class='Next' type='go'>Next Question</button>
-      `;
+    const a =`<form id='next' method='post' action="/some-server-endpoint">
+    <h2>Great! You got it right!</h2>
+    <button type='check' id='check'>Next Question</button
+    </form>`;
     return a;
   }
   
   //updates the html inside of main
-  function updateHtml(htmlCode) {
+  function updateMain(htmlCode) {
     $('main').html(htmlCode);
   }
 
-  //function update score
-  function updateScore() {
+  //Updates score variable
+  function scoreUpdate(reset = false) {
+    if (reset) {
+      score = 0;
+      return score;
+    }
     return score++;
-    //could update score html here
   }
 
-  //check answer function
-  function isRight(choice, answer) {
-    return true; //will need to fix this later, to check if answer is correct
+  //updates quesionNum variable
+  function questionNumUpdate(reset = false) {
+    if (reset){
+      questionNum = 0;
+      return questionNum;
+    }
+    return questionNum++;
+
+  }
+
+  function questionNumTextUpdate() {
+    let a = `Question ${questionNum + 1} of ${Object.keys(dataSet).length}`;
+    $('#question').html(a);
   }
 }
 
-main();
+submitHandle();
+
+/*
+
+Things left to do
+  
+  make choosing a radio button required
+
+*/

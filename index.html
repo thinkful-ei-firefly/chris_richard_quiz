@@ -1,46 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Richard and Chris' Quiz</title>
-        <meta name="description" content="Chris and Richard's Quiz">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./style.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <header class="wrapper">
-            <h1>Question</h1>
-                <h2>1 of 10</h2>
-        </header>
-        <main>
-                <form class='quiz' action='Submits' method='post'>
-                    <fieldset name='avengersQuiz'>
-                    <p>  
-                    <legend class="title">Avenger's Quiz</legend>
-                    </p>  
-                      <label class="label">What Avenger turns green?</label>
-                      <p class="answer">
-                      <input type='radio' id="radio" required/> Hulk<br>
-                      <input type='radio' id="radio"/> George Washington<br>
-                      <input type='radio' id="radio"/> A Roadkill Hamster<br>
-                      <input type='radio' id="radio"/> Toyota Prius<br>
-                      <input type='radio' id="radio"/> Your mom<br> 
-                      </p>
-                      <p>
-
-                      <button type='submit' class="checkout-button" name="checkout-button" disabled="disabled"id="begin">Submit</button>
-                      
-                    </p>
-                    </fieldset>
-                    </form>
-        </main>
-
-        <script src="./index.js" async defer></script>
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous">
-        </script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Chris & Richard Quiz</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+        <h1>Quiz Title</h1>
+        <p id='score'></p>
+        <p id='question'></p>
+    </header>
+    <main class='main'>  
+        <form id="begin" action="/some-server-endpoint">
+            <p>Are You Ready to Get Started?</p>
+            <button type="submit">Start Quiz</button>
+        </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

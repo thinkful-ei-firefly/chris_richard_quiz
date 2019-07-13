@@ -18,6 +18,16 @@ fieldset {
   margin-right: auto;
 }
 
+form {
+	box-shadow: 20px 18px black;
+	border-radius: 35px;
+	width: 400px;
+	background-color: cyan;
+	padding: auto;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
 legend {
   display: block;
   padding-left: 33%;
