@@ -3,14 +3,15 @@
 html {
   max-width: auto;
   max-height: auto;
-  background: linear-gradient( rgba(0, 0, 255, 0.99), rgba(219, 162, 66, 0.96),rgba(11, 11, 255, 0.96)),  url(https://cdn5.vectorstock.com/i/1000x1000/95/44/presidential-seal-gold-against-white-ai-vector-16869544.jpg);
+  background: linear-gradient( rgba(0, 0, 255, 0.99), rgba(219, 162, 66, 0.96),rgba(11, 11, 255, 0.96)), url('Presidential Seal.jpg');
   font-size: 25.33%;
   height: 100%;
   width: 100%;
   -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover; 
+  background-size: cover; 
+  
 }
 
 body {
@@ -20,42 +21,43 @@ body {
 	font-size: 20px;
 	letter-spacing: 0.05em;
   color: black;
-	box-sizing: border-box;
 	padding:10%;
 	margin: 0.9%;
-	text-align: center;
+  text-align: center;
+  
 }
 
 
 h1 {
-	padding:5rem, 0, 0, 100%; 
-	margin:5rem auto, 0, 100%;
-	font-weight: normal;
+  color: yellow;
+	padding:auto; 
+	margin: auto;
+	font-weight: lighter;
 }
 
-#score, #question{
+#score{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 600;
-  color: black;
+  color: yellow;
   
 }
+/*
+#question {
 
+}
+*/
 .quizTitle {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: lighter;
   max-width: 1080px; 
   color: black;
-  box-shadow: 10px 20px black;
   padding-left: 45%;
   padding-right: 45%;
   padding-bottom: 1%;
   text-align: end;
-  margin: 5em, 0, 0, 10;
-  display: inline-block;
-  align-content: center;
-  border: 5px solid gray;
-  border-radius: 1em;
-  */
+/*  margin: 5em, 0, 0, 10;*/
+  display: block;
+  align-self: inherit;
   
 }
 
@@ -65,9 +67,8 @@ form {
   padding: 08%;
   text-align: center;
   box-sizing: content-box;
-  border: 2px solid gray;
-  border-radius: 1.2em;
-  box-shadow: 10px 20px black;
+
+
 }
 
 
@@ -93,18 +94,29 @@ p {
 }
 */
 button{
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /*-webkit-transition: linear 1s; */
+  -webkit-transition: ease-in-out .60s;
+  font-family: cursive;
 	font-size: 48px;
-	font-weight: bolder;
+	font-weight: 700;
 	letter-spacing: 0.29em;
-	padding: 15%;
-	margin: 0rem;
-	border:0;
-	color: yellow;
-	background-color: rgba(77, 12, 120, 0.5);
+	padding: 5%;
+  margin: auto;
+  border-radius: 30px;
+  border: 15px single silver blue;
+  color: darkblue;
+	background: linear-gradient( rgba(255, 0, 0, 99), rgba(255, 255, 255, 99),rgba(11, 11, 255, 99));
 }
 
 button:hover, #button-submit:focus {
-  background-color:blueviolet;
-  d
+  
+  font-family: cursive;
+  border: 4px dotted red;
+  color: black;
+  background: linear-gradient( rgba(255, 0, 0, 0.50), rgba(255, 255, 255, 0.50),rgba(11, 11, 255, 0.50)), url('flag.png');
+
+}
+
+button:selection #button-submit:focus{
+  -webkit-transition: ease-in 11s; 
 }
