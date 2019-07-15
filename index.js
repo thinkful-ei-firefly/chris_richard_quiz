@@ -15,7 +15,7 @@ let dataSet = {
     options: ['New York, N.Y.', 'Sacramento, CA.', 'Quincy, MA.', 'Santa Fe, N.M.', 'Denver, CO.'],
     answer: 'answerC',
     correct: 'Your answer of Quincy, MA is correct!',
-    wrong: 'That is incorrect.\n The correct answer is Quincy, MA.'
+    wrong: 'That is incorrect.</br> The correct answer is Quincy, MA.'
   },
   q2: {
     text:'What President wrote the Gettysburg Address',
@@ -27,8 +27,8 @@ let dataSet = {
   q3: {
     text:'Who was the 5th President of the United States?',
     options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
-    answer: 'answerD',
-    correct: `James Monroe was the fifth president of the United States, having served in office from 
+    answer: 'answerC',
+    correct: `Correct!\nJames Monroe was the fifth president of the United States, having served in office from 
               1817 to 1825. Many people assume Abraham Lincoln was the fifth president because he appears 
               on the $5 bill. Lincoln was actually the 16th president.`,
     wrong: `The correct answer is James Monroe.\n James Monroe was the fifth president of the United States, 
@@ -39,7 +39,7 @@ let dataSet = {
     text:'What does the “S” in Harry S. Truman’s name stand for?',
     options: ['Stanely', 'Nothing', 'Steven', 'Sherman', 'Samuel'],
     answer: 'answerB',
-    correct: `The S in President Truman’s name is actually a compromise his parents made between both of 
+    correct: `Correct!\nThe S in President Truman’s name is actually a compromise his parents made between both of 
               his grandfather’s names, Anderson Shipp Truman and Solomon Young. There is still controversy
               today about whether there should be a period after the S.`,
     wrong: `The correct answer is Nothing!\n The S in President Truman’s name is actually a compromise his parents made between both of 
@@ -50,7 +50,7 @@ let dataSet = {
     text:'What state produced the most U.S. presidents?',
     options: ['a', 'Virginia', 'c', 'd', 'e'],
     answer: 'answerB',
-    correct: `Eight U.S. presidents were born in Virginia, and Ohio was close behind, having produced seven 
+    correct: `Correct\nEight U.S. presidents were born in Virginia, and Ohio was close behind, having produced seven 
               presidents.`,
     wrong: `The correct answer is Virginia. Eight U.S. presidents were born in Virginia, and Ohio was close 
             behind, having produced seven presidents.`,
@@ -58,8 +58,8 @@ let dataSet = {
   q6: {
     text:'Who was the first president to be born in the United States?',
     options: ['a', 'b', 'c', 'Marin Van Buren', 'e'],
-    answer: 'answerA',
-    correct: `Yes, the Constitution requires the U.S. president be a natural-born citizen, but the first 
+    answer: 'answerD',
+    correct: `Correct!\nhe Constitution requires the U.S. president be a natural-born citizen, but the first 
               seven presidents were born before the United States gained independence, meaning they were 
               British subjects. Martin Van Buren, the eighth president, was born in New York in 1782.`,
     wrong: `The Correct answer is Martin Van Buren\n Yes, the Constitution requires the U.S. president be 
@@ -71,7 +71,7 @@ let dataSet = {
     text:'How many presidents died in office?',
     options: ['a', 'b', 'c', 'Eight', 'e'],
     answer: 'answerD',
-    correct: `The presidents that died while in office were William Henry Harrison, Zachary Taylor, Abraham 
+    correct: `Correct!\nThe presidents that died while in office were William Henry Harrison, Zachary Taylor, Abraham 
               Lincoln, James A. Garfield, William McKinley, Warren G. Harding, Franklin D. Roosevelt, and John 
               F. Kennedy.`,
     wrong: `The Correct anser is eight.\n The presidents that died while in office were William Henry Harrison, 
@@ -83,7 +83,7 @@ let dataSet = {
           another president in between.`,
     options: ['a', 'b', 'c', 'd', 'Grover Clevaland'],
     answer: 'answerE',
-    correct: `President Cleveland served in office from 1885 to 1889 and then again from 1893 to 1897. He was 
+    correct: `Correct!\nPresident Cleveland served in office from 1885 to 1889 and then again from 1893 to 1897. He was 
               the 22nd and 24th president of the United States.`,
     wrong: `The correct anser is Grover Clevaland. President Cleveland served in office from 1885 to 1889 and 
             then again from 1893 to 1897. He was the 22nd and 24th president of the United States`
@@ -92,7 +92,7 @@ let dataSet = {
     text: 'What year did Alexander Hamilton become president?',
     options: ['a', 'Never', 'c', 'd', 'e'],
     answer: 'answerB',
-    correct: `Great Job! Alexander Hamilton was never president; he was just a very well known man that 
+    correct: `Great Job!\n Alexander Hamilton was never president; he was just a very well known man that 
               contributed a lot to politics. Though he was never the commander in chief, he did serve as the 
               country’s first secretary of the treasury from 1789 to 1795, as well as found the first U.S. 
               political party, the Federalists.`,
@@ -190,21 +190,21 @@ function submitHandle(){
         <form id='check' method='post' action="/some-server-endpoint">
         <h2>${question}</h2>
         <p>
-        <input type='radio' id='choiceA' 
+        <input type='radio' id='answerA' 
           name='quiz' value='answerA'/>
-        <label for='AnswerA'>${options[0]}</label></br>
-        <input type='radio' id='choiceB'
+        <label for='answerA'>${options[0]}</label></br>
+        <input type='radio' id='answerB'
           name='quiz' value='answerB'/>
-        <label for='AnswerB'>${options[1]}</label></br>
-        <input type='radio' id='choiceC'
+        <label for='answerB'>${options[1]}</label></br>
+        <input type='radio' id='answerC'
           name='quiz' value='answerC'/>
-        <label for='AnswerC'>${options[2]}</label></br>
-        <input type='radio' id='choiceD'
+        <label for='answerC'>${options[2]}</label></br>
+        <input type='radio' id='answerD'
           name='quiz' value='answerD'/>
-        <label for='AnswerD'>${options[3]}</label></br>
-        <input type='radio' id='choiceE'
+        <label for='answerD'>${options[3]}</label></br>
+        <input type='radio' id='answerE'
           name='quiz' value='answerE'/>
-        <label for='AnswerE'>${options[4]}</label></br>
+        <label for='answerE'>${options[4]}</label></br>
         </p>
         <button type='check' id='check'>Check Answer</button
         </form>`;
