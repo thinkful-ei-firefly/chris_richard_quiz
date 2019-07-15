@@ -2,10 +2,6 @@
 
 /*
 Things to Add
-
--add a11y and aria
-
--Polished and professional look.
 */
 
 //The majority of the question in the quiz came from 
@@ -28,7 +24,7 @@ let dataSet = {
   q3: {
     text:'Who was the 5th President of the United States?',
     options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
-    answer: 'answerC',
+    answer: 'answerD',
     correct: `Correct!</br>James Monroe was the fifth president of the United States, having served in office from 
               1817 to 1825. Many people assume Abraham Lincoln was the fifth president because he appears 
               on the $5 bill. Lincoln was actually the 16th president.`,
