@@ -2,88 +2,73 @@
 /*
 Things to Add
 
+-add real questions
+
 -What the correct answer is.
 
--Make choosing a radio button required.
-
--Maintains functionality accross different viewpoint sizes starting at 320 px
 
 -Polished and professional look.
 
-*/
+
 
 let dataSet = {
-  q1: {
-    text:'question1: a is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerA',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q2: {
-    text:'question2: b is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerB',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q3: {
-    text:'question3: c is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerC',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q4: {
-    text:'question4: d is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerD',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q5: {
-    text:'question5: e is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerE',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q6: {
-    text:'question6: a is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerA',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q7: {
-    text:'question7: b is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerB',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q8: {
-    text:'question8: c is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerC',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q9: {
-    text:'question9: d is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerD',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  },
-  q10: {
-    text:'question10: e is correct',
-    options: ['a', 'b', 'c', 'd', 'e'],
-    answer: 'answerE',
-    correctText: 'That is correct!',
-    wrongText: 'Sorry that is incorrect, the correct answer is '
-  }
-};
+    q1: {
+      text:'What city has two Presidents buried in a church?',
+      options: ['New York, N.Y.', 'Sacramento, CA.', 'Quincy, MA.', 'Santa Fe, N.M.', 'Denver, CO.'],
+      answer: 'answerC',
+    },
+    q2: {
+      text:'What President wrote the Gettysburg Address',
+      options: ['George Washington', 'Chester A. Arthur', 'Franklin Pierce', 'John F. Kennedy', 'Abraham Lincoln'],
+      answer: 'answerE',
+    },
+    q3: {
+      text:'Who was the 5th President?',
+      options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
+      answer: 'answerD',
+    },
+    q4: {
+      text:'question4: d is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerD',
+    },
+    q5: {
+      text:'question5: e is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerE',
+    },
+    q6: {
+      text:'question6: a is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerA',
+      correct: 'Some responce Correct page',
+      wrong: 'some wrong text'
+    },
+    q7: {
+      text:'question7: b is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerB',
+    },
+    q8: {
+      text:'question8: c is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerC',
+    },
+    q9: {
+      text:'question9: d is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerD',
+    },
+    q10: {
+      text:'question10: e is correct',
+      options: ['a', 'b', 'c', 'd', 'e'],
+      answer: 'answerE',
+    }
+  };
+
+*/
+
+
 
 let questionNum = 0;
 let score = 0;
@@ -201,10 +186,10 @@ function submitHandle(){
   function getEndHtml() {
     const a =`
     <form id="restart" action="/some-server-endpoint">
-    <p>This is the End of the quiz.</p>
+    <p>This is the End of the quiz. You did great!!!</p>
     <p>Your score is ${score} out of ${Object.keys(dataSet).length}</p>
     <p>Would you like to play again</p>
-    <button type="submit">Play Again</button>
+    <button type="submit">Let's play Again!!!</button>
     </form>`;
     return a;
   }
