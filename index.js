@@ -3,19 +3,19 @@ function submitHandle(){
 
   let dataSet = {
     q1: {
-      text:'question1: a is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerA',
+      text:'What city has two Presidents buried in a church?',
+      options: ['New York, N.Y.', 'Sacramento, CA.', 'Quincy, MA.', 'Santa Fe, N.M.', 'Denver, CO.'],
+      answer: 'answerC',
     },
     q2: {
-      text:'question2: b is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerB',
+      text:'What President wrote the Gettysburg Address',
+      options: ['George Washington', 'Chester A. Arthur', 'Franklin Pierce', 'John F. Kennedy', 'Abraham Lincoln'],
+      answer: 'answerE',
     },
     q3: {
-      text:'question3: c is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerC',
+      text:'Who was the 5th President?',
+      options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
+      answer: 'answerD',
     },
     q4: {
       text:'question4: d is correct',
@@ -145,10 +145,10 @@ function submitHandle(){
   function getEndHtml() {
     const a =`
     <form id="restart" action="/some-server-endpoint">
-    <p>This is the End of the quiz.</p>
+    <p>This is the End of the quiz. You did great!!!</p>
     <p>Your score is ${score} out of ${Object.keys(dataSet).length}</p>
     <p>Would you like to play again</p>
-    <button type="submit">Play Again</button>
+    <button type="submit">Let's play Again!!!</button>
     </form>`;
     return a;
   }
@@ -183,7 +183,7 @@ function submitHandle(){
     return score++;
   }
 
-  //updates quesionNum variable
+  //updates questionNum variable
   function questionNumUpdate(reset = false) {
     if (reset){
       questionNum = 0;
@@ -201,9 +201,9 @@ function submitHandle(){
 
 submitHandle();
 
-/*
 
-Things left to do
+
+/*Things left to do
   
   make choosing a radio button required
 

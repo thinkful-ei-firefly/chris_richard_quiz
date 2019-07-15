@@ -1,71 +1,110 @@
+.no-fouc {display: none;}
+
+html {
+  max-width: auto;
+  max-height: auto;
+  background: linear-gradient( rgba(0, 0, 255, 0.99), rgba(219, 162, 66, 0.96),rgba(11, 11, 255, 0.96)),  url(https://cdn5.vectorstock.com/i/1000x1000/95/44/presidential-seal-gold-against-white-ai-vector-16869544.jpg);
+  font-size: 25.33%;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+}
 
 body {
-  background: orange;
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+	font-size: 20px;
+	letter-spacing: 0.05em;
+  color: black;
+	box-sizing: border-box;
+	padding:10%;
+	margin: 0.9%;
+	text-align: center;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
+
+h1 {
+	padding:5rem, 0, 0, 100%; 
+	margin:5rem auto, 0, 100%;
+	font-weight: normal;
 }
 
-fieldset {
-  box-shadow: 20px 18px black;
-  border-radius: 35px;
-  width: 400px;
-  background-color: cyan;
-  padding: auto;
-  margin-left: auto;
-  margin-right: auto;
+#score, #question{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: black;
+  
+}
+
+.quizTitle {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  max-width: 1080px; 
+  color: black;
+  box-shadow: 10px 20px black;
+  padding-left: 45%;
+  padding-right: 45%;
+  padding-bottom: 1%;
+  text-align: end;
+  margin: 5em, 0, 0, 10;
+  display: inline-block;
+  align-content: center;
+  border: 5px solid gray;
+  border-radius: 1em;
+  */
+  
 }
 
 form {
-	box-shadow: 20px 18px black;
-	border-radius: 35px;
-	width: 400px;
-	background-color: cyan;
-	padding: auto;
-	margin-left: auto;
-	margin-right: auto;
-  }
-
-legend {
-  display: block;
-  padding-left: 33%;
-  font-size: 32px;
+  max-width: 1080px;
+  margin: auto;
+  padding: 08%;
   text-align: center;
-  margin-bottom: 40px;
+  box-sizing: content-box;
+  border: 2px solid gray;
+  border-radius: 1.2em;
+  box-shadow: 10px 20px black;
 }
 
-label {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  display: block;
-  height: 40px;
-  width: 320px;
-  margin: 15, auto, 15, auto;
-}
 
-input {
-  display: block;
-  width: 290px;
-  padding: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.answer {
-  text-align: center;
-}
-
-/*button disabled until customized*/
-button:disabled {
-  user-select: none;
-}
-
+/* the .script items are meant for radio buttons. These will align and I am hoping with this you will be able to select the text as well as the radio buttons*/
 /*
-footer {
-  text-align: center;
-  color: orange;
-  font-size: 18px;
-  padding: 15px;
+.radio-item {
+  padding: 0.5rem 0em;
+  justify-content: left;
+}
+
+.radio-item label:hover, .radio-item label:focus{
+	color: #E8E8E8;
+}
+
+.radio-item input:checked + label {
+	color: #E8E8E8;
+  font-weight: bold;
+  
+}
+p {
+	padding: 1rem 0rem;
+	margin: 1rem 0rem;
 }
 */
+button{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 48px;
+	font-weight: bolder;
+	letter-spacing: 0.29em;
+	padding: 15%;
+	margin: 0rem;
+	border:0;
+	color: yellow;
+	background-color: rgba(77, 12, 120, 0.5);
+}
+
+button:hover, #button-submit:focus {
+  background-color:blueviolet;
+  d
+}

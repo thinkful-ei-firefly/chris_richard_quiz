@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Chris & Richard Quiz</title>
+    <meta http-equiv="X-UA-Compatible" content ="IE-edge">
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="a11y, accessibility, Thinkful, QuizApp">
+    <meta property="og:image" content="http://voorhoede.github.io/a11y-boilerplate/a11y-boilerplate.png">
+      <title>Chris & Richard Quiz</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header>
-        <h1>Quiz Title</h1>
+    <header class="quizTitle">
+        <h1>President Trivia</h1>
         <p id='score'></p>
         <p id='question'></p>
     </header>
-    <main class='main'>  
+    <main class='main'>
         <form id="begin" action="/some-server-endpoint">
-            <p>Are You Ready to Get Started?</p>
-            <button type="submit">Start Quiz</button>
-        </form>
+            <p id="title2">How well do you know your Presidents?</p>
+            <button type="submit">Lets Find Out!</button>
+        </form> 
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="index.js"></script>
+    <!-- I need to itemize the radio buttons to make this all line up. I figured with the colors it would have a high contrast.. 
+      the submit button is large enough and high contrast/low contrast colors. I would also like to address the design of the questions as well so that I can space them and give them a face-lift. -->
+    <script class='script' src="index.js"></script>
   </body>
 </html>
+
+<!-- so what I am trying to do is if you look in CSS I am attempting to add future features to create something more appealing
+I have updated this to allow for Aria and A11y compatibility I would like to clean up the bordering but for now I think it should work-->
