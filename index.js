@@ -1,74 +1,123 @@
 'use strict';
+/*
+Things to Add
+
+-What the correct answer is.
+
+-Make choosing a radio button required.
+
+-Maintains functionality accross different viewpoint sizes starting at 320 px
+
+-Polished and professional look.
+
+*/
+
+let dataSet = {
+  q1: {
+    text:'question1: a is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerA',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q2: {
+    text:'question2: b is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerB',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q3: {
+    text:'question3: c is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerC',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q4: {
+    text:'question4: d is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerD',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q5: {
+    text:'question5: e is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerE',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q6: {
+    text:'question6: a is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerA',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q7: {
+    text:'question7: b is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerB',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q8: {
+    text:'question8: c is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerC',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q9: {
+    text:'question9: d is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerD',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  },
+  q10: {
+    text:'question10: e is correct',
+    options: ['a', 'b', 'c', 'd', 'e'],
+    answer: 'answerE',
+    correctText: 'That is correct!',
+    wrongText: 'Sorry that is incorrect, the correct answer is '
+  }
+};
+
+let questionNum = 0;
+let score = 0;
+
 function submitHandle(){
-
-  let dataSet = {
-    q1: {
-      text:'question1: a is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerA',
-    },
-    q2: {
-      text:'question2: b is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerB',
-    },
-    q3: {
-      text:'question3: c is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerC',
-    },
-    q4: {
-      text:'question4: d is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerD',
-    },
-    q5: {
-      text:'question5: e is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerE',
-    },
-    q6: {
-      text:'question6: a is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerA',
-      correct: 'Some responce Correct page',
-      wrong: 'some wrong text'
-    },
-    q7: {
-      text:'question7: b is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerB',
-    },
-    q8: {
-      text:'question8: c is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerC',
-    },
-    q9: {
-      text:'question9: d is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerD',
-    },
-    q10: {
-      text:'question10: e is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerE',
-    }
-  };
-
-  let questionNum = 0;
-  let score = 0;
 
   //button press listener
   $('main').submit(e => {
+    
     e.preventDefault();
-    let imgId = $(e.target).attr('id');
-    if (imgId === 'begin') {
+
+    //Get the id of the button pressed.
+    //The button id will be different for each section of the quiz.
+    //begin , check , next , restart
+    let buttonId = $(e.target).attr('id');
+
+    //buttonId = begin occures on the start quiz page.
+    //When pressed, we will update <main> (contains question text)
+    //the question number text and score text.
+    if (buttonId === 'begin') {
       updateMain(getQuestionHtml(dataSet[Object.keys(dataSet)[questionNum]].text, dataSet[Object.keys(dataSet)[questionNum]].options));
       questionNumTextUpdate();
       $('#score').html(`Score: ${score}`);
     }
-    else if (imgId === 'check') {
+
+    //buttonId = check occures on any question page.
+    //check the answer and go to the correct or wrong page.
+    else if (buttonId === 'check') {
+
+      //radio button is required
+      if (!$('input[name=\'quiz\']', this).is(':checked')) {
+        alert('Please select an answer');
+        return false;
+      }
       
       // get the users input choice
       const choice = $('input[name=\'quiz\']:checked').val();
@@ -87,22 +136,29 @@ function submitHandle(){
         updateMain(getWrongHtml());
       }
     }
-    else if (imgId === 'next') {
+
+    //buttonId = next is on a wrong or correct answer page.
+    else if (buttonId === 'next') {
+      //Load the next question, unless it is the last
       if (questionNum < Object.keys(dataSet).length) {
         //update to the next question
         updateMain(getQuestionHtml(dataSet[Object.keys(dataSet)[questionNum]].text, dataSet[Object.keys(dataSet)[questionNum]].options));
         questionNumTextUpdate();
       }
+      //load the end of quiz.
       else {
         updateMain(getEndHtml());
         $('#question').html('');
       }
     }
-    else if (imgId === 'restart') {
+
+    //buttonId = restart is on the end page
+    //when pressed it restarts the quiz.
+    else if (buttonId === 'restart') {
       updateMain(getStartHtml());
       questionNumUpdate(true);
       scoreUpdate(true);
-      $('#score').html(``);
+      $('#score').html('');
       return questionNum = 0;
     }
   });
@@ -200,11 +256,3 @@ function submitHandle(){
 }
 
 submitHandle();
-
-/*
-
-Things left to do
-  
-  make choosing a radio button required
-
-*/
