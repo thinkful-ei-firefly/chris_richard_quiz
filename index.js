@@ -186,7 +186,7 @@ function submitHandle(){
 
   function getQuestionHtml(question, options) {
     const questionHtml = `
-        <form id='check' method='post' action="/some-server-endpoint">
+        <form id='check' method='post' aria-label='${question}' aria-live='polite'>
         <h2>${question}</h2>
         <p>
         <input type='radio' id='answerA' 
@@ -212,7 +212,7 @@ function submitHandle(){
 
   function getStartHtml() {
     const a =`
-      <form id="begin" action="/some-server-endpoint">
+      <form id="begin" action="/some-server-endpoint" aria-label='Start Quiz.' aria-live='polite'>
       <p>Are You Ready to Get Started?</p>
       <button type="submit">Start Quiz</button>
       </form>`;
@@ -221,7 +221,7 @@ function submitHandle(){
 
   function getEndHtml() {
     const a =`
-    <form id="restart" action="/some-server-endpoint">
+    <form id="restart" action="/some-server-endpoint" aria-label='Quiz over.' aria-live='polite'>
     <p>This is the End of the quiz. You did great!!!</p>
     <p>Your score is ${score} out of ${Object.keys(dataSet).length}</p>
     <p>Would you like to play again</p>
@@ -231,7 +231,7 @@ function submitHandle(){
   }
 
   function getWrongHtml(wrongText) {
-    const a =`<form id='next' method='post' action="/some-server-endpoint">
+    const a =`<form id='next' method='post' action="/some-server-endpoint" aria-label='You got this question wrong.' aria-live='polite'>
     <h2>${wrongText}</h2>
     <button type='check' id='check'>Next Question</button
     </form>`;
@@ -239,7 +239,7 @@ function submitHandle(){
   }
 
   function getCorrectHtml(correctText) {
-    const a =`<form id='next' method='post' action="/some-server-endpoint">
+    const a =`<form id='next' method='post' action="/some-server-endpoint" aria-label='You got the question right' aria-live='polite' >
     <h2>${correctText}</h2>
     <button type='check' id='check'>Next Question</button
     </form>`;

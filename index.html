@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content ="IE-edge">
-
     <meta name="viewport" content="width=device-width" />
     <meta name="keywords" content="a11y, accessibility, Thinkful, QuizApp">
-    <meta property="og:image" content="http://voorhoede.github.io/a11y-boilerplate/a11y-boilerplate.png">
       <title>Chris & Richard Quiz</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header class="quizTitle">
+    <header class="quizTitle" role='banner'>
         <h1>President Trivia</h1>
         <p id='score'></p>
         <p id='question'></p>
     </header>
     <main class='main'>
-        <form id="begin" action="/some-server-endpoint">
+        <form id="begin" aria-label='Start Quiz.'>
             <p id="title2">How well do you know your Presidents?</p>
-            <button type="submit">Lets Find Out!</button>
+            <button type="submit" role='button'>Lets Find Out!</button>
         </form> 
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
