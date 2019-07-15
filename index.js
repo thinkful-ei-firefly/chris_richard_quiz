@@ -1,74 +1,107 @@
 'use strict';
+
 /*
 Things to Add
 
--add real questions
-
--What the correct answer is.
-
+-add a11y and aria
 
 -Polished and professional look.
-
-
-
-let dataSet = {
-    q1: {
-      text:'What city has two Presidents buried in a church?',
-      options: ['New York, N.Y.', 'Sacramento, CA.', 'Quincy, MA.', 'Santa Fe, N.M.', 'Denver, CO.'],
-      answer: 'answerC',
-    },
-    q2: {
-      text:'What President wrote the Gettysburg Address',
-      options: ['George Washington', 'Chester A. Arthur', 'Franklin Pierce', 'John F. Kennedy', 'Abraham Lincoln'],
-      answer: 'answerE',
-    },
-    q3: {
-      text:'Who was the 5th President?',
-      options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
-      answer: 'answerD',
-    },
-    q4: {
-      text:'question4: d is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerD',
-    },
-    q5: {
-      text:'question5: e is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerE',
-    },
-    q6: {
-      text:'question6: a is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerA',
-      correct: 'Some responce Correct page',
-      wrong: 'some wrong text'
-    },
-    q7: {
-      text:'question7: b is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerB',
-    },
-    q8: {
-      text:'question8: c is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerC',
-    },
-    q9: {
-      text:'question9: d is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerD',
-    },
-    q10: {
-      text:'question10: e is correct',
-      options: ['a', 'b', 'c', 'd', 'e'],
-      answer: 'answerE',
-    }
-  };
-
 */
 
 
+let dataSet = {
+  q1: {
+    text:'What city has two Presidents buried in a church?',
+    options: ['New York, N.Y.', 'Sacramento, CA.', 'Quincy, MA.', 'Santa Fe, N.M.', 'Denver, CO.'],
+    answer: 'answerC',
+    correct: 'Your answer of Quincy, MA is correct!',
+    wrong: 'That is incorrect.\n The correct answer is Quincy, MA.'
+  },
+  q2: {
+    text:'What President wrote the Gettysburg Address',
+    options: ['George Washington', 'Chester A. Arthur', 'Franklin Pierce', 'John F. Kennedy', 'Abraham Lincoln'],
+    answer: 'answerE',
+    correct: 'Your answer of Abraham Lincoln is correct',
+    wrong: 'That is incorrect.\n The correct answer is Abraham Lincoln.'
+  },
+  q3: {
+    text:'Who was the 5th President of the United States?',
+    options: ['Andrew Jackson', 'Optimus Prime', 'James Madison', 'James Monroe', 'John Quincy Adams'],
+    answer: 'answerD',
+    correct: `James Monroe was the fifth president of the United States, having served in office from 
+              1817 to 1825. Many people assume Abraham Lincoln was the fifth president because he appears 
+              on the $5 bill. Lincoln was actually the 16th president.`,
+    wrong: `The correct answer is James Monroe.\n James Monroe was the fifth president of the United States, 
+            having served in office from 1817 to 1825. Many people assume Abraham Lincoln was the fifth 
+            president because he appears on the $5 bill. Lincoln was actually the 16th president.`
+  },
+  q4: {
+    text:'What does the “S” in Harry S. Truman’s name stand for?',
+    options: ['Stanely', 'Nothing', 'Steven', 'Sherman', 'Samuel'],
+    answer: 'answerB',
+    correct: `The S in President Truman’s name is actually a compromise his parents made between both of 
+              his grandfather’s names, Anderson Shipp Truman and Solomon Young. There is still controversy
+              today about whether there should be a period after the S.`,
+    wrong: `The correct answer is Nothing!\n The S in President Truman’s name is actually a compromise his parents made between both of 
+    his grandfather’s names, Anderson Shipp Truman and Solomon Young. There is still controversy
+    today about whether there should be a period after the S.`
+  },
+  q5: {
+    text:'What state produced the most U.S. presidents?',
+    options: ['a', 'Virginia', 'c', 'd', 'e'],
+    answer: 'answerB',
+    correct: `Eight U.S. presidents were born in Virginia, and Ohio was close behind, having produced seven 
+              presidents.`,
+    wrong: `The correct answer is Virginia. Eight U.S. presidents were born in Virginia, and Ohio was close 
+            behind, having produced seven presidents.`,
+  },
+  q6: {
+    text:'Who was the first president to be born in the United States?',
+    options: ['a', 'b', 'c', 'Marin Van Buren', 'e'],
+    answer: 'answerA',
+    correct: `Yes, the Constitution requires the U.S. president be a natural-born citizen, but the first 
+              seven presidents were born before the United States gained independence, meaning they were 
+              British subjects. Martin Van Buren, the eighth president, was born in New York in 1782.`,
+    wrong: `The Correct answer is Martin Van Buren\n Yes, the Constitution requires the U.S. president be 
+            a natural-born citizen, but the first seven presidents were born before the United States gained 
+            independence, meaning they were British subjects. Martin Van Buren, the eighth president, was 
+            born in New York in 1782.`
+  },
+  q7: {
+    text:'How many presidents died in office?',
+    options: ['a', 'b', 'c', 'Eight', 'e'],
+    answer: 'answerD',
+    correct: `The presidents that died while in office were William Henry Harrison, Zachary Taylor, Abraham 
+              Lincoln, James A. Garfield, William McKinley, Warren G. Harding, Franklin D. Roosevelt, and John 
+              F. Kennedy.`,
+    wrong: `The Correct anser is eight.\n The presidents that died while in office were William Henry Harrison, 
+            Zachary Taylor, Abraham Lincoln, James A. Garfield, William McKinley, Warren G. Harding, 
+            Franklin D. Roosevelt, and John F. Kennedy.`
+  },
+  q8: {
+    text: `Which president served two non-consecutive terms?\n That’s right: One president served twice, with 
+          another president in between.`,
+    options: ['a', 'b', 'c', 'd', 'Grover Clevaland'],
+    answer: 'answerE',
+    correct: `President Cleveland served in office from 1885 to 1889 and then again from 1893 to 1897. He was 
+              the 22nd and 24th president of the United States.`,
+    wrong: `The correct anser is Grover Clevaland. President Cleveland served in office from 1885 to 1889 and 
+            then again from 1893 to 1897. He was the 22nd and 24th president of the United States`
+  },
+  q9: {
+    text: 'What year did Alexander Hamilton become president?',
+    options: ['a', 'Never', 'c', 'd', 'e'],
+    answer: 'answerB',
+    correct: `Great Job! Alexander Hamilton was never president; he was just a very well known man that 
+              contributed a lot to politics. Though he was never the commander in chief, he did serve as the 
+              country’s first secretary of the treasury from 1789 to 1795, as well as found the first U.S. 
+              political party, the Federalists.`,
+    wrong: `Trick question! Alexander Hamilton was never president; he was just a very well known man that 
+            contributed a lot to politics. Though he was never the commander in chief, he did serve as the 
+            country’s first secretary of the treasury from 1789 to 1795, as well as found the first U.S. 
+            political party, the Federalists.`,
+  }
+};
 
 let questionNum = 0;
 let score = 0;
@@ -84,6 +117,7 @@ function submitHandle(){
     //The button id will be different for each section of the quiz.
     //begin , check , next , restart
     let buttonId = $(e.target).attr('id');
+    console.log(buttonId);
 
     //buttonId = begin occures on the start quiz page.
     //When pressed, we will update <main> (contains question text)
@@ -111,15 +145,18 @@ function submitHandle(){
       const answer = dataSet[Object.keys(dataSet)[questionNum]].answer;
       
       //compair if true go to correct, if false go to wrong
-      questionNumUpdate();
       if (choice === answer) {
+        console.log(dataSet[Object.keys(dataSet)[questionNum]].correct);
         scoreUpdate();
         $('#score').html(`Score: ${score}`);
-        updateMain(getCorrectHtml());
+        updateMain(getCorrectHtml(dataSet[Object.keys(dataSet)[questionNum]].correct));
       } 
       else {
-        updateMain(getWrongHtml());
+        updateMain(getWrongHtml(dataSet[Object.keys(dataSet)[questionNum]].wrong));
       }
+
+      //update the question to the next one
+      questionNumUpdate();
     }
 
     //buttonId = next is on a wrong or correct answer page.
@@ -194,17 +231,17 @@ function submitHandle(){
     return a;
   }
 
-  function getWrongHtml() {
+  function getWrongHtml(wrongText) {
     const a =`<form id='next' method='post' action="/some-server-endpoint">
-    <h2>That's Incorrect :(</h2>
+    <h2>${wrongText}</h2>
     <button type='check' id='check'>Next Question</button
     </form>`;
     return a;
   }
 
-  function getCorrectHtml() {
+  function getCorrectHtml(correctText) {
     const a =`<form id='next' method='post' action="/some-server-endpoint">
-    <h2>Great! You got it right!</h2>
+    <h2>${correctText}</h2>
     <button type='check' id='check'>Next Question</button
     </form>`;
     return a;
