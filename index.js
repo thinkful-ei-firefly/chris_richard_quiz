@@ -45,7 +45,7 @@ let dataSet = {
   },
   q5: {
     text:'What state produced the most U.S. presidents?',
-    options: ['a', 'Virginia', 'c', 'd', 'e'],
+    options: ['New York', 'Virginia', 'Hello World', 'Massachusets', 'North Carolina'],
     answer: 'answerB',
     correct: `Correct</br>Eight U.S. presidents were born in Virginia, and Ohio was close behind, having produced seven 
               presidents.`,
@@ -54,7 +54,7 @@ let dataSet = {
   },
   q6: {
     text:'Who was the first president to be born in the United States?',
-    options: ['a', 'b', 'c', 'Marin Van Buren', 'e'],
+    options: ['George Washington', 'Ben Franklin', 'John Adams', 'Martin Van Buren', 'Thomas Jefferson'],
     answer: 'answerD',
     correct: `Correct!</br>The Constitution requires the U.S. president be a natural-born citizen, but the first 
               seven presidents were born before the United States gained independence, meaning they were 
@@ -66,7 +66,7 @@ let dataSet = {
   },
   q7: {
     text:'How many presidents died in office?',
-    options: ['a', 'b', 'c', 'Eight', 'e'],
+    options: ['One', 'Three', 'Four', 'Eight', 'None'],
     answer: 'answerD',
     correct: `Correct!</br>The presidents that died while in office were William Henry Harrison, Zachary Taylor, Abraham 
               Lincoln, James A. Garfield, William McKinley, Warren G. Harding, Franklin D. Roosevelt, and John 
@@ -78,7 +78,7 @@ let dataSet = {
   q8: {
     text: `Which president served two non-consecutive terms?</br> That’s right: One president served twice, with 
           another president in between.`,
-    options: ['a', 'b', 'c', 'd', 'Grover Clevaland'],
+    options: ['Theodore Rosevelt', 'John Adams', 'George Bush', 'Franklin D. Rosevelt', 'Grover Clevaland'],
     answer: 'answerE',
     correct: `Correct!</br>President Cleveland served in office from 1885 to 1889 and then again from 1893 to 1897. He was 
               the 22nd and 24th president of the United States.`,
@@ -87,7 +87,7 @@ let dataSet = {
   },
   q9: {
     text: 'What year did Alexander Hamilton become president?',
-    options: ['a', 'Never', 'c', 'd', 'e'],
+    options: ['1824', 'Never', '1792', '1846', '2012'],
     answer: 'answerB',
     correct: `Great Job!</br> Alexander Hamilton was never president; he was just a very well known man that 
               contributed a lot to politics. Though he was never the commander in chief, he did serve as the 
