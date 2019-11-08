@@ -27,12 +27,12 @@ body {
   
 }
 
-
 h1 {
+  text-align: center;
   color: yellow;
-	padding:auto; 
-	margin: auto;
-	font-weight: lighter;
+	margin: 0;
+  font-weight: lighter;
+  padding: 5px;
 }
 
 #score{
@@ -41,24 +41,15 @@ h1 {
   color: yellow;
   
 }
-/*
-#question {
 
-}
-*/
 .quizTitle {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: lighter;
   max-width: 1080px; 
   color: black;
-  padding-left: 45%;
-  padding-right: 45%;
-  padding-bottom: 1%;
   text-align: end;
-/*  margin: 5em, 0, 0, 10;*/
   display: block;
   align-self: inherit;
-  
 }
 
 form {
@@ -67,34 +58,9 @@ form {
   padding: 08%;
   text-align: center;
   box-sizing: content-box;
-
-
 }
 
-
-/* the .script items are meant for radio buttons. These will align and I am hoping with this you will be able to select the text as well as the radio buttons*/
-/*
-.radio-item {
-  padding: 0.5rem 0em;
-  justify-content: left;
-}
-
-.radio-item label:hover, .radio-item label:focus{
-	color: #E8E8E8;
-}
-
-.radio-item input:checked + label {
-	color: #E8E8E8;
-  font-weight: bold;
-  
-}
-p {
-	padding: 1rem 0rem;
-	margin: 1rem 0rem;
-}
-*/
 button{
-  /*-webkit-transition: linear 1s; */
   -webkit-transition: ease-in-out .60s;
   font-family: cursive;
 	font-size: 48px;
